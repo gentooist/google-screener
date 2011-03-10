@@ -17,7 +17,7 @@ class GoogleScreener
     :hl       => "en",
     :output   => "json",
     :restype  => "company",
-    :sortas   => "Price52WeekPercChange",
+    :sortas   => "Volume",
     :desc     => 1,
     :noIL     => 1,
     :start    => 0,
@@ -32,26 +32,17 @@ class GoogleScreener
                    :Price52WeekPercChange,
                    :Price13WeekPercChange,
                    :NetIncomeGrowthRate5Years,
-                   :QuoteLast
+                   :QuoteLast,
+                   :Volume,
+                   :AverageVolume,
+                   :QuotePercChange
                   ]
   
   # Defaults for the query. Probably these values are too specific?
   DEFAULTS = {
     :max => {
-      :MarketCap                  => 1_500_000_000_000,
-      :PE                         => 100,
-      :DividendYield              => 50,
-      :Price52WeekPercChange      => -5,
-      :NetIncomeGrowthRate5Years  => 500,
-      :QuoteLast                  => 150000
     },
     :min => {
-      :MarketCap                  => 10_000_000,
-      :PE                         => 0,
-      :DividendYield              => 0,
-      :Price52WeekPercChange      => -100,
-      :NetIncomeGrowthRate5Years  => -100,
-      :QuoteLast                  => 0
     }
   }
   
